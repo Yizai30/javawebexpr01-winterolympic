@@ -27,9 +27,9 @@
     </style>
 </head>
 <body>
-<h2>Start To Create Your Article</h2>
+<h2 style="margin-left: 3%">Start To Create Your Article</h2>
 <div class="input-group" style="margin-bottom:10px">
-    <textarea class="form-control" id="article-content" cols="150" rows="10">
+    <textarea class="form-control" id="article-content" cols="150" rows="10" style="margin-left: 3%">
 
     </textarea>
 </div>

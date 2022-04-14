@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                 <div class="input-addon">
                     <i class="material-icons">face</i>
                 </div>
-                <input name="uid" placeholder="Uid" type="text" required class="validate" autocomplete="off">
+                <input id="uid" name="uid" placeholder="Uid" type="text" required class="validate" autocomplete="off">
             </div>
 
             <div class="clearfix"></div>
@@ -38,7 +39,7 @@
                 <div class="input-addon">
                     <i class="material-icons">vpn_key</i>
                 </div>
-                <input name="passwd" placeholder="Password" type="password" required class="validate" autocomplete="off">
+                <input id="passwd" name="passwd" placeholder="Password" type="password" required class="validate" autocomplete="off">
             </div>
 
             <div class="remember-me">
@@ -46,7 +47,7 @@
                 <span style="color: #DDD">Remember Me</span>
             </div>
 
-            <input type="submit" value="Log In" />
+            <input type="submit" value="Log In" onclick="check()" />
         </form>
 
         <div class="forgot-password">
@@ -61,6 +62,36 @@
             <a href="register.jsp"><button id="register-link">Register here</button></a>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function check() {
+            if(!isText(document.getElementById("uid").value))
+            {
+                alert("账号必须填写3-16位的(英文字符,数字,下划线)");
+                document.getElementById("uid").focus();
+                return false;
+            }
+            if(!isPassword(document.getElementById("passwd").value))
+            {
+                alert("密码不规范");
+                document.getElementById("passwd").focus();
+                return false;
+            }
+            /*运行到这里说明验证通过返回true submit提交按钮起作用提交表单*/
+            alert("登录成功")
+            return true;
+        }
+        function isText(str)
+        {
+            var reg=/^[a-zA-Z0-9_]{3,16}$/;   /*定义验证表达式*/
+            return reg.test(str);     /*进行验证*/
+        }
+        function isPassword(str)
+        {
+            var reg=/^[a-zA-Z\d_]{3,}$/;   /*定义验证表达式*/
+            return reg.test(str);     /*进行验证*/
+        }
+    </script>
 </body>
 
 </html>

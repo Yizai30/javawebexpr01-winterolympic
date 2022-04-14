@@ -125,7 +125,7 @@
 </head>
 
 <body>
-
+<h1 style="background-color: #5bc0de;color: snow;font-size: x-large;padding: 1%">Welcome to Beijing Winter Olympic!</h1>
 <div id="slideshow">
     <ul id="imglist">
         <li><img src="./images/1.jpg"></li>

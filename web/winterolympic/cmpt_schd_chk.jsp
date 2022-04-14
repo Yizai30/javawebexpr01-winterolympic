@@ -13,7 +13,7 @@
     <link href="./css/prism.css" rel="stylesheet" />
     <style>
         .query-button {
-            margin-top: 80px;
+            margin-top: 3%;
             margin-left: 3%;
             padding: 15px 25px;
             background: #f4f5f7;
@@ -27,21 +27,26 @@
     </style>
 </head>
 <body>
+<h2 style="margin-left: 3%">Start To Check Your Schedule</h2>
 <div>
-    记者编号<input type="text">
+    <txt style="margin-left: 3%;font-size: medium">记者编号</txt><input type="text">
     <button class="query-button" id="btn_show" onclick="Show_Table()">query</button>
 </div>
 <div style="margin-top:10px" id="Record"></div>
 <script>
     function Show_Table() {
         // console.log(SymbolTable);
-        var inner_html = "<div class=\"table-responsive\">";
+        var inner_html = "<div class=\"table-responsive\" style=\"margin-left: 3%;\" >";
+
+        inner_html += "<hr>";
 
         inner_html += "<h3>待记录项目</h3><table class=\"table\"><thead><tr><td>项目名称</td><td>时间</td><td>场地</td></tr></thead><tbody>";
         // for (i = 0; i < SymbolTable.global_symbol_table.length; i++) {
         //     inner_html += "<tr><td>" + SymbolTable.global_symbol_table[i].cmptname + "</td><td>" + SymbolTable.global_symbol_table[i].time + "</td><td>" + SymbolTable.global_symbol_table[i].place + "</td></tr>";
         // }
         inner_html += "</tbody><table></div>";
+
+        inner_html += "<hr>";
 
         inner_html += "<h3>待记录运动员</h3>";
         // for (i = 0; i < SymbolTable.local_symbol_tables.length; i++) {
@@ -52,6 +57,9 @@
             // }
             inner_html += "</tbody><table>";
         // }
+
+        inner_html += "<hr>";
+
         document.getElementById("Record").innerHTML = inner_html;
     }
 </script>
