@@ -12,6 +12,12 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/prism.css" rel="stylesheet" />
     <style>
+        .article-submit-background {
+            background: url("./images/article-submit-background.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachemt: fixed;
+        }
         .submit-link {
             margin-top: 30px;
             margin-left: 3%;
@@ -26,8 +32,8 @@
         }
     </style>
 </head>
-<body>
-<h2 style="margin-left: 3%">Start To Create Your Article</h2>
+<body class="article-submit-background">
+<h2 style="margin-left: 3%;font-weight: bold;color: black">Start To Create Your Article</h2>
 <div class="input-group" style="margin-bottom:10px">
     <textarea class="form-control" id="article-content" cols="150" rows="10" style="margin-left: 3%">
 

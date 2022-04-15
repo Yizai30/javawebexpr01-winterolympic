@@ -12,6 +12,12 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/prism.css" rel="stylesheet" />
     <style>
+        .cmpt-schd-chk-background {
+            background: url("./images/article-submit-background.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachemt: fixed;
+        }
         .query-button {
             margin-top: 3%;
             margin-left: 3%;
@@ -26,10 +32,10 @@
         }
     </style>
 </head>
-<body>
-<h2 style="margin-left: 3%">Start To Check Your Schedule</h2>
+<body class="cmpt-schd-chk-background">
+<h2 style="margin-left: 3%;font-weight: bold;">Start To Check Your Schedule</h2>
 <div>
-    <txt style="margin-left: 3%;font-size: medium">记者编号</txt><input type="text">
+    <txt style="margin-left: 3%;font-size: medium;font-weight: bold">记者编号</txt><input type="text">
     <button class="query-button" id="btn_show" onclick="Show_Table()">query</button>
 </div>
 <div style="margin-top:10px" id="Record"></div>
