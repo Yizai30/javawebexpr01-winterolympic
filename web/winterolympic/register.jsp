@@ -28,7 +28,7 @@
             <div class="input-addon">
                 <i class="material-icons">face</i>
             </div>
-            <input name="uid" placeholder="Uid" type="text" required class="validate" autocomplete="off">
+            <input id="uid" name="uid" placeholder="Uid" type="text" required class="validate" autocomplete="off">
         </div>
 
         <div class="clearfix"></div>
@@ -56,7 +56,7 @@
             <div class="input-addon">
                 <i class="material-icons">face</i>
             </div>
-            <input name="age" placeholder="Age" type="text" required class="validate" autocomplete="off">
+            <input id="age" name="age" placeholder="Age" type="text" required class="validate" autocomplete="off">
         </div>
 
         <div class="clearfix"></div>
@@ -65,7 +65,7 @@
             <div class="input-addon">
                 <i class="material-icons">vpn_key</i>
             </div>
-            <input name="passwd" placeholder="Password" type="password" required class="validate" autocomplete="off">
+            <input id="passwd" name="passwd" placeholder="Password" type="password" required class="validate" autocomplete="off">
         </div>
 
         <div class="remember-me">
@@ -73,7 +73,7 @@
             <span style="color: #DDD">I accept Terms of Service</span>
         </div>
 
-        <input type="submit" value="Register" />
+        <input type="submit" value="Register" onclick="check_register()"/>
     </form>
 
     <div class="privacy">
@@ -85,4 +85,42 @@
         <a href="login.jsp"><button id="register-link">Log In here</button></a>
     </div>
 </div>
+<script type="text/javascript">
+    function check_register() {
+        if(!isText(document.getElementById("uid").value))
+        {
+            alert("账号必须填写3-16位的(英文字符,数字,下划线)");
+            document.getElementById("uid").focus();
+            return false;
+        }
+        if (!isAge(document.getElementById("age").value)) {
+            alert("年龄必须在18岁到150岁之间");
+            document.getElementById("age").focus();
+            return false;
+        }
+        if(!isPassword(document.getElementById("passwd").value))
+        {
+            alert("密码必须由大于等于3位的字母、数字、下划线组成");
+            document.getElementById("passwd").focus();
+            return false;
+        }
+        /*运行到这里说明验证通过返回true submit提交按钮起作用提交表单*/
+        alert("注册成功")
+        return true;
+    }
+    function isText(str)
+    {
+        var reg=/^[a-zA-Z0-9_]{3,16}$/;   /*定义验证表达式*/
+        return reg.test(str);     /*进行验证*/
+    }
+    function isAge(str) {
+        var reg=/^(1[8-9]|[2-9][0-9]|1[0-4][0-9]|150)$/;   /* 定义验证表达式 */
+        return reg.test(str);       /* 进行验证 */
+    }
+    function isPassword(str)
+    {
+        var reg=/^[a-zA-Z\d_]{3,}$/;   /*定义验证表达式*/
+        return reg.test(str);     /*进行验证*/
+    }
+</script>
 </body>

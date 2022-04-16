@@ -15,12 +15,51 @@ public class UsrDAOImpl implements IUsrDAO {
         this.conn = conn;
     }
 
+    private boolean checkUid(String str) {
+        int len = str.length();
+        if (len < 3 || len > 16) {
+            return false;
+        }
+        for (int i = 0; i < len; i++) {
+            char ch = str.charAt(i);
+            if ((ch < 'a' || ch > 'z') && (ch < 'A' || ch > 'Z') && (ch < '0' || ch > '9') && ch != '_') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean checkAge(int age) {
+        if (age < 18 || age > 150) {
+            return false;
+        }
+        return true;
+    }
+
+    private boolean checkPasswd(String str) {
+        int len = str.length();
+        if (len < 3) {
+            return false;
+        }
+        for (int i = 0; i < len; i++) {
+            char ch = str.charAt(i);
+            if ((ch < 'a' || ch > 'z') && (ch < 'A' || ch > 'Z') && (ch < '0' || ch > '9') && ch != '_') {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public boolean doCreate(Usr usr) throws Exception{
         boolean flag = false ;
         String sql = "INSERT INTO user_info(uid,name,gender,age,passwd) VALUES (?,?,?,?,?)";
         this.pstmt = this.conn.prepareStatement(sql);
         System.out.println(usr.getClass());
         System.out.println("task:doCreate(Usr usr).");
+        if (!checkUid(usr.getUid()) || !checkAge(usr.getAge()) || !checkPasswd(usr.getPasswd())) {
+            System.out.println("注册信息不合法");
+            return false;
+        }
         this.pstmt.setString(1, usr.getUid());
         this.pstmt.setString(2, usr.getName());
         this.pstmt.setByte(3, usr.getGender());
