@@ -51,6 +51,13 @@ public class UsrDAOImpl implements IUsrDAO {
     }
 
     public boolean doCreate(Usr usr) throws Exception{
+
+        // 如果用户 uid 存在，则注册无效
+        if (findByUid(usr.getUid()) != null) {
+            System.out.println("该用户已存在，注册无效");
+            return false;
+        }
+
         boolean flag = false ;
         String sql = "INSERT INTO user_info(uid,name,gender,age,passwd) VALUES (?,?,?,?,?)";
         this.pstmt = this.conn.prepareStatement(sql);
