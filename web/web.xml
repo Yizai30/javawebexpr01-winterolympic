@@ -8,17 +8,26 @@
         <servlet-name>login</servlet-name>
         <servlet-class>winterolympic.servlet.LoginServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>register</servlet-name>
-        <servlet-class>winterolympic.servlet.RegisterServlet</servlet-class>
-    </servlet>
-
     <servlet-mapping>
         <servlet-name>login</servlet-name>
         <url-pattern>/winterolympic/LoginServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>winterolympic.servlet.RegisterServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>register</servlet-name>
         <url-pattern>/winterolympic/RegisterServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>winterolympic.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/winterolympic/LogoutServlet</url-pattern>
     </servlet-mapping>
 </web-app>

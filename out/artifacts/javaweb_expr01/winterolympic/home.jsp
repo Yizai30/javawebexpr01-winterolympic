@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
 <head>
@@ -41,6 +41,14 @@
             opacity: 0.8;
             height: 200px;
             width: 2000px;
+        }
+
+        .drop_down_list {
+            display: none;
+        }
+
+        .drop_down:hover .drop_down_list {
+            display: block;
         }
 
         #slideshow {
@@ -125,7 +133,18 @@
 </head>
 
 <body>
-<h1 style="background-color: #5bc0de;color: snow;font-size: x-large;padding: 1%">Welcome to Beijing Winter Olympic!</h1>
+<div style="background-color: #5bc0de;color: snow;font-size: large;padding: 1%;display: flex">
+    <h1 style="width: 100%">Welcome to Beijing Winter Olympic!</h1>
+    <div class="drop_down">
+        <h1 style="display: flex;justify-content: flex-end;width: 100%">User</h1>
+        <div class="drop_down_list">
+            <ul>
+                <li class><a href="#">用户中心</a></li>
+                <li class><a href="../winterolympic/LogoutServlet">注销</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div id="slideshow">
     <ul id="imglist">
         <li><img src="./images/1.jpg"></li>

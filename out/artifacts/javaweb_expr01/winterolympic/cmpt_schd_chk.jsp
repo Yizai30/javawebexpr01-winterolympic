@@ -42,7 +42,7 @@
 
 <jsp:setProperty name="cmpt" property="uid" value="mena"/>
 <jsp:setProperty name="cmpt" property="cmptName" value="花样滑冰"/>
-<jsp:setProperty name="cmpt" property="time" value="2022-2-18 17:30:00"/>
+<jsp:setProperty name="cmpt" property="time" value="2022-02-18 17:30:00"/>
 <jsp:setProperty name="cmpt" property="place" value="no.177 course"/>
 
 <h2 style="margin-left: 3%;font-weight: bold;">Start To Check Your Schedule</h2>
