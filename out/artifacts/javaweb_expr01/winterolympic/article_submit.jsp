@@ -42,5 +42,12 @@
 <div>
     <input type="submit" class="submit-link" value="submit">
 </div>
+
+<%
+    if (request.getSession().getAttribute("usr") == null) {
+        response.sendRedirect("ArticleServlet");
+    }
+%>
+
 </body>
 </html>

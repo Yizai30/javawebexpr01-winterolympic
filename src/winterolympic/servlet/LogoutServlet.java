@@ -17,16 +17,20 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        session.invalidate();
+        session.removeAttribute("usr");
+
+        // 设置 response 编码方式，防止乱码
+        //resp.setContentType("text/html;charset=utf-8");
 
         // 弹窗提醒
-//        PrintWriter out = resp.getWriter();
-//        String msg="注销成功";
-//        out.println("<script type=\"text/javascript\">");
-//        out.println("alert('" + msg + "');");
-//        out.println("</script>");
+        //resp.getWriter().print("<script>alert('注销成功');</script>");
 
         // 服务器跳转
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         req.getRequestDispatcher("login.jsp").forward(req, resp) ;
     }
 }

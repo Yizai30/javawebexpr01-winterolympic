@@ -71,6 +71,12 @@
     </div>
 </div>
 
+<%
+    if (request.getSession().getAttribute("usr") == null) {
+        response.sendRedirect("ArticleServlet");
+    }
+%>
+
 <script>
     function Show_Table() {
 

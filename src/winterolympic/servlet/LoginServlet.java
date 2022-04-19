@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String successpath = "home.jsp";
+        String successpath = "HomeServlet";
         String failurepath = "login.jsp";
         String uid = request.getParameter("uid");
         String passwd = request.getParameter("passwd");
@@ -56,7 +56,6 @@ public class LoginServlet extends HttpServlet {
         List<String> info = new ArrayList<String>();    // 收集错误
         Usr usr = new Usr() ;
         usr.setUid(uid);
-
         usr.setPasswd(passwd);
         Boolean flag=false;
 
@@ -79,6 +78,7 @@ public class LoginServlet extends HttpServlet {
                 if(flag){
 //					info.add("用户登陆成功，欢迎" + tea.getTname() + "光临！") ;
 //					request.setAttribute("info",info) ;
+                    request.getSession().setAttribute("usr", usr);
                     request.getRequestDispatcher(successpath).forward(request, response) ;
 
                 } else {

@@ -164,8 +164,8 @@
     <div id="next">&gt;</div>
 </div>
 <div class="home-link-background">
-    <a href="article_submit.jsp"><button class="home-link">Article Contributing</button></a>
-    <a href="cmpt_schd_chk.jsp"><button class="home-link">Competition Schedule Checking</button></a>
+    <a href="ArticleServlet"><button class="home-link">Article Contributing</button></a>
+    <a href="CmptServlet"><button class="home-link">Competition Schedule Checking</button></a>
 </div>
 <script>
     // 找对象
@@ -182,6 +182,13 @@
     var timer; // 设置一个计时器
 
     window.onload = function() {
+
+        <%
+        if (request.getSession().getAttribute("usr") == null) {
+            response.sendRedirect("HomeServlet");
+        }
+        %>
+
         imgList.children[0].classList.add("appear"); // 初始时显示第一幅图片
         dotList.children[0].classList.add("appear"); // 初始时第一个点为白色
 

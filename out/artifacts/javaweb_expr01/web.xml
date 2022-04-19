@@ -21,6 +21,33 @@
         <servlet-name>register</servlet-name>
         <url-pattern>/winterolympic/RegisterServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>home</servlet-name>
+        <servlet-class>winterolympic.servlet.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>home</servlet-name>
+        <url-pattern>/winterolympic/HomeServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>article</servlet-name>
+        <servlet-class>winterolympic.servlet.ArticleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>article</servlet-name>
+        <url-pattern>/winterolympic/ArticleServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cmpt</servlet-name>
+        <servlet-class>winterolympic.servlet.CmptServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cmpt</servlet-name>
+        <url-pattern>/winterolympic/CmptServlet</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>logout</servlet-name>
